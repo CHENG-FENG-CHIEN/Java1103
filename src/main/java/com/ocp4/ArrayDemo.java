@@ -22,6 +22,10 @@ public class ArrayDemo {
         //算出體重平均
         double w_avg = getAvg(weight);
         System.out.printf("%.1f , %.1f\n", h_avg, w_avg);
+        //算出BMI平均
+        double bmi_avg =getBMIAvg(height, weight) ;
+        System.out.printf("BMI 平均 =%.2f\n",bmi_avg);
+       
     }
 
     public static double getSum(double[] array) {
@@ -36,6 +40,22 @@ public class ArrayDemo {
         double sum = getSum(array);
         return sum / array.length;
 
+    }
+    public static double getBMIAvg(double[] h_array, double[] w_array) {
+        if(h_array.length != w_array.length){
+            System.out.println("資料長度不一致");
+            return 0.0;
+        }
+        double bmi_sum=0;    // bmi的總和        
+        int len =h_array.length;//先把長度(筆數,個數)存入到 len的變數中
+        //因為 h_array 與 w_array 的長度是相同的       所以可共用i值
+        for (int i = 0; i < h_array.length; i++) {
+            double h = h_array[i];
+            double w = w_array[i];
+            double bmi = w /Math.pow(h/100,2);  //計算bmi
+            bmi_sum += bmi;//累計bmi的總和        
+        }
+        return bmi_sum /len;// 計算bmi的平均
     }
 
 }
