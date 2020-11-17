@@ -34,4 +34,27 @@ public class MathUtil {
         double cv = sd / avg;
         return cv;
     }
+    
+
+    //取得最大值
+    public static double max(double [] values){
+        double max = 0;
+        for (int i = 0; i < values.length; i++) {
+            if(values[i] > max){
+                max = values[i];
+            }
+        }
+        return max;
+    }
+    
+    //取得最小值
+    public static double min(double [] values){
+        double min = Integer.MAX_VALUE;
+        for (int i = 0; i < values.length; i++) {
+            if(values[i] < min){
+                min = values[i];
+            }
+        }
+        return min;
+    }
 }
