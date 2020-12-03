@@ -73,21 +73,21 @@ public class PetService {
             System.out.printf("Total price(%s) : %,d\n",
                     clazzName, totalPriceByPet);
         }
-    } 
-        //取得最高價的寵物
-    public void printMaxPriceByPet(Pet[] pets){
-        Pet p =null;
-        for(Pet pet: pets){
-            if(p ==null){
-                p =pet;
+    }
+    //取得最高價的寵物
+
+    public void printMaxPriceByPet(Pet[] pets) {
+        Pet p = null;
+        for (Pet pet : pets) {
+            if (p == null) {
+                p = pet;
                 continue;
             }
-            if(pet.getPrice()> p.getPrice()){
-                p =pet;
+            if (pet.getPrice() > p.getPrice()) {
+                p = pet;
             }
         }
-        System.out.printf("最高價寵物: %s 價格: %,d\n",p.getClass().getSimpleName(),p.getPrice() );
+        System.out.printf("最高價寵物: %s 價格: %,d\n", p.getClass().getSimpleName(), p.getPrice());
     }
-    
-}
 
+}
