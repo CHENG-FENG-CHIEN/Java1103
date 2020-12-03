@@ -1,8 +1,8 @@
-package com.ocp10;
+package com.ocp10.computer;
 
 import java.math.BigInteger;
 
-public class Mobile implements Computer{
+public abstract class Mobile implements Computer{
 
     @Override
     public int add(int x, int y) {
@@ -11,10 +11,4 @@ public class Mobile implements Computer{
         BigInteger sum = b1.add(b2);
         return sum.intValue();
     }
-
-    @Override
-    public String getName() {
-       return "手機";
-    }
-    
-}
+  }
