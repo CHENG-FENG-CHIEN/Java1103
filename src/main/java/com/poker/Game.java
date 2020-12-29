@@ -12,7 +12,7 @@ public class Game {
     public static void main(String[] args) {
         Queue<Poker> pokers = getPokers();
         Collections.shuffle((List)pokers);
-        //ySystem.out.println(pokers);
+        //System.out.println(pokers);
         play(pokers);
     }
     public static void play(Queue<Poker> pokers) {
@@ -72,5 +72,7 @@ public class Game {
         System.out.printf("PC的牌是: %s 目前分數: %.1f \n", 
                               pcPokers, getScore(pcPokers));
         System.out.println("剩餘的牌: " + pokers);
+        
+        main(null);
     }
 }
