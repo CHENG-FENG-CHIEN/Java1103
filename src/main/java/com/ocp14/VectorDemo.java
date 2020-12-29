@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class VectorDemo {
     public static void main(String[] args) {
-        Vector v = new Vector(81, 5);
+        Vector v = new Vector(81, 5); //int initialCapacity, int capacityIncrement
         for (int i = 1; i <= 81; i++) {
             v.add(i);
         }
