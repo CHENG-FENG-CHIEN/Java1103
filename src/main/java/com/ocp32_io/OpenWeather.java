@@ -12,6 +12,7 @@ import java.util.TimeZone;
 import org.json.JSONObject;
 
 public class OpenWeather {
+
     public static void main(String[] args) throws Exception {
         String id = "7d0b7cd4e38a5db7ac4a55a030942b9b";
         String cityName = "taoyuan,TW";
@@ -23,8 +24,8 @@ public class OpenWeather {
         Reader r = new InputStreamReader(is);
         int data = 0;
         String jsonStr = "";
-        while ( (data = r.read()) != -1) {            
-            jsonStr += (char)data;
+        while ((data = r.read()) != -1) {
+            jsonStr += (char) data;
         }
         System.out.println(jsonStr);
         // 分析 Json 字串
@@ -35,16 +36,13 @@ public class OpenWeather {
         int humidity = main.getInt("humidity");
         int dt = root.getInt("dt");
         //---------------------------------------------------------------------------------------
-        Calendar calendar = Calendar.getInstance();
-        TimeZone tz = TimeZone.getDefault();
-        calendar.add(Calendar.MILLISECOND, tz.getOffset(calendar.getTimeInMillis()));
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-        java.util.Date currenTimeZone=new Date((long)dt*1000);
+        Date currenTimeZone = new Date((long) dt * 1000);
         //---------------------------------------------------------------------------------------
         System.out.printf("目前溫度: %.2f\n", temp);
         System.out.printf("體感溫度: %.2f\n", feels_like);
         System.out.printf("目前濕度: %d %%\n", humidity);
         System.out.printf("發佈時間: %s\n", sdf.format(currenTimeZone));
-        
+
     }
 }
